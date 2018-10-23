@@ -1,0 +1,296 @@
+header{
+  width: 100%;
+  font-family: $normal;
+  .center-mobile{
+    width: 100%;
+    display: none;
+    padding: 10px 10px 0 10px;
+    @media screen and (max-width: $sm){
+      display: flex;
+    }
+    align-items: center;
+    justify-content: center;
+    a{
+      width: 100%;
+    } // a
+  } // center mobile
+  .ldje-topbar{
+    height: 115px;
+    width: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    @media screen and (max-width: $lg){
+      width: 100%;
+    } // ldje topbar lg
+    @media screen and (max-width: $sm){
+      height: auto;
+      border-bottom: 1px solid $grey;
+      padding: 0 0 10px 0;
+    }
+    .left{
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      @media screen and (max-width: $lg){
+        padding-left: 20px;
+      } // left lg
+      section{
+        margin: 0;
+        div{
+          width: auto;
+          ul{
+            li.wpml-ls-current-language{
+              a{
+                span{
+
+                } // span
+              } // a
+              ul.wpml-ls-sub-menu{
+
+              } // ul .wpml-ls-sub-menu
+            } // li .wpml-ls-current-language
+          } // ul
+        } // div
+      } // section
+      .ldje-search{
+        margin:0;
+        padding:0;
+        margin-left: 50px;
+        cursor: pointer;
+        @media screen and (max-width: $sm){
+          margin-left: 20px;
+        }
+        img{
+          //padding-top:6px;
+          width: 23px;
+        }
+      } // ldje search
+    } // left
+    .center{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: $sm){
+        display: none;
+      }
+      a{
+        width: 100%;
+      } // a
+    } // center
+    .right{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      @media screen and (max-width: $lg){
+        padding-right: 20px;
+      } // right lg
+      a{
+        position: relative;
+        text-decoration: none;
+        span{
+          position: absolute;
+          height: 25px;
+          width: 25px;
+          top: 12px;
+          left: -7px;
+          font-size: 10px;
+          background: $gold;
+          color: #ffffff;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+        }
+        img{
+          width: 45px;
+        } // img
+      } // a
+      .menu-toggle{
+        margin-left: 10px;
+        width: 45px;
+        height: 45px;
+        background: $gold;
+        display: none;
+        @media screen and (max-width: $sm){
+          display: flex;
+        }
+        align-items: center;
+        justify-content: center;
+        i{
+          color: #ffffff;
+          font-size: 22px;
+        }
+        &.opened{
+          background: $grey;
+          i{
+            color: $gold;
+          }
+        }
+      }
+    } // right
+  } // topbar
+  .ldje-menu-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    @media screen and (max-width: $sm){
+      display: none;
+    }
+    div{
+      ul.menu{
+        margin: 0;
+        padding: 0;
+        width: 1160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: $lg){
+          width: 100vw;
+        } // ldje topbar lg
+        li{
+          text-decoration: none;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          a{
+            text-align: center;
+            width: 100%;
+            color: #000000;
+            text-decoration: none;
+          } // a
+          &.current-menu-item{
+            background: $gold;
+            a{
+              color: #ffffff;
+            }
+          }
+          &:hover{
+            background: $gold;
+            a{
+              color: #ffffff;
+            }
+          }
+        } // ul menu li
+      } // ul menu
+    } // div
+  } // ldje menu desktop
+  .ldje-menu-mobile{
+    display: none;
+      position: relative;
+      ul{
+        position: absolute;
+        background: #ffffff;
+        top: -100vh;
+        left: 0;
+        z-index: 999;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s ease all;
+        li{
+          padding: 10px;
+          width: 100%;
+          text-align: center;
+          //border-top: 1px solid $grey;
+          border-bottom: 1px solid $grey;
+          a{
+            text-decoration: none;
+            color: #000000;
+          } // a
+          &.current-menu-item{
+            background: $gold;
+            a{
+              color: #ffffff;
+            }
+          } // current menu item
+        } // li
+      } // ul
+      @media screen and (max-width: $sm){
+        &.visible{
+          display: block;
+          transition: 0.4s ease all;
+          ul{
+            top: 0;
+            opacity: 1;
+            transition: 1s ease all;
+          }
+        }
+    } // ldje menu mobile sm
+  } // ldje menu mobile
+} // header
+
+body{
+  position: relative;
+}
+.ldje-search-container{
+  display: none;
+  &.visible{
+    display: flex;
+    z-index: 999;
+    .close{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 10;
+    } // close
+    .ldje-form-container{
+      display: block;
+      z-index: 999;
+      width: 36%;
+      @media screen and (max-width: $md){
+        width: 100%;
+        padding: 0 20px;
+      }
+      div{
+        width: 100%;
+        form{
+          width: 100%;
+          input[type="search"]{
+            width: 100%;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 2px solid #000000;
+            border-radius: 0;
+            text-align: center;
+            font-size: 60px;
+            color: #000000;
+            height: 90px;
+            &::placeholder{
+              font-size: 60px;
+              color: #000000;
+              @media screen and (max-width: $sm){
+                font-size: 24px;
+              }
+            } // placeholder
+          } // input search
+          input[type="submit"]{
+            display: none;
+          } // input submit
+        } // form
+      } // div
+    } // ldje form container
+  } // visible
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,255,255,0.85);
+  align-items: center;
+  justify-content: center;
+
+}
